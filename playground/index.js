@@ -1,4 +1,3 @@
-
 /**
  *
  * @param {import('web-tree-sitter').Tree} tree
@@ -85,6 +84,8 @@ function generateCall(node, source) {
     return "soft_line_break()";
   } else if (nodeContent === `Line(Hard)`) {
     return "hard_line_break()";
+  } else if (nodeContent === `Line(Empty)`) {
+    return "empty_line()";
   }
 
   let nameNode = node.namedChild(0);
@@ -116,7 +117,6 @@ function generateCall(node, source) {
   }
   return `${callName}(${generatedArgument})`;
 }
-
 
 /**
  *

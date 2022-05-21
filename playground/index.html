@@ -45,12 +45,11 @@
   <div id='diagnostics'></div>
   <script type="module" src="./index.js">
   </script>
-  <script type="module">
-  </script>
   <script src="./tree-sitter.js"></script>
   <script src='wasm_rustfmt.js'></script>
   <script>
     const Parser = window.TreeSitter
+    console.log(Parser)
     let parser;
     (async () => {
       await Parser.init();
@@ -58,7 +57,6 @@
 
       const RomeIr = await Parser.Language.load('tree-sitter-rome_ir.wasm');
       parser.setLanguage(RomeIr);
-      console.log(parser)
     })()
   </script>
   <script type="module">
@@ -75,7 +73,6 @@
       try {
         rustCode = generate(tree)
       } catch (err) {
-        console.error(err)
         diagnostics.innerText = err.toString();
         diagnostics.style.display = 'block';
         return
