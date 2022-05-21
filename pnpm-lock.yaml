@@ -1,0 +1,13 @@
+lockfileVersion: 5.4
+
+specifiers:
+  web-tree-sitter: ^0.20.5
+
+dependencies:
+  web-tree-sitter: 0.20.5
+
+packages:
+
+  /web-tree-sitter/0.20.5:
+    resolution: {integrity: sha512-mpXlqIeEBE5Q71cnBnt8w6XKhIiKmllPECqsIFBtMvzcfCxA8+614iyMJXBCQo95Vs3y1zORLqiLJn25pYZ4Tw==}
+    dev: false

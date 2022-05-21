@@ -1,0 +1,16 @@
+{
+  "name": "romeir-to-rs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.mjs",
+  "module": "src/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "web-tree-sitter": "^0.20.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
