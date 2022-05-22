@@ -109,7 +109,6 @@ function generateCall(node, source) {
     }
     case "string_literal": {
       generatedArgument = JSON.stringify(arg.text.slice(1, -1));
-      // console.log()
       break;
     }
     default:
