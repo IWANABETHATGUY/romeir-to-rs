@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/index.mjs",
   "scripts": {
-    "dev": "cp src/index.mjs ./playground/index.js && live-server ./playground"
+    "dev": "cp src/index.mjs ./playground/index.js && live-server ./playground",
+    "build": "cp src/index.mjs ./playground/index.js "
+
   },
   "dependencies": {
     "web-tree-sitter": "^0.20.5"

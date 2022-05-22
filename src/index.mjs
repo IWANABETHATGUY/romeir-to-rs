@@ -80,7 +80,6 @@ function generateIdent(ident) {
  */
 function generateCall(node, source) {
   let nodeContent = node.text;
-  console.log(nodeContent)
   if (nodeContent === `Line(Soft)`) {
     return "soft_line_break()";
   } else if (nodeContent === `Line(Hard)`) {
@@ -110,7 +109,6 @@ function generateCall(node, source) {
     }
     case "string_literal": {
       generatedArgument = JSON.stringify(arg.text.slice(1, -1));
-      // console.log()
       break;
     }
     default:
