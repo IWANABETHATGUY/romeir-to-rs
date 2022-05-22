@@ -15,7 +15,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Build
-        run: npm run build
+        run: ls
         
         
       - uses: actions/checkout@v3
