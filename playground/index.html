@@ -49,7 +49,6 @@
   <script src='wasm_rustfmt.js'></script>
   <script>
     const Parser = window.TreeSitter
-    console.log(Parser)
     let parser;
     (async () => {
       await Parser.init();
@@ -94,7 +93,7 @@
     };
     wasm_bindgen('wasm_rustfmt_bg.wasm').then(() => {
       button.disabled = false;
-      button.innerText = 'rustfmt';
+      button.innerText = 'generate';
     });
   </script>
 </body>
