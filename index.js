@@ -126,6 +126,7 @@ function generateCallName(name) {
     case "HardGroup":
       return "hard_group_elements";
     case "SyntaxTokenSlice":
+    case "DynamicToken":
       return "token";
     case "Group":
       return "group_elements";
@@ -139,3 +140,4 @@ function generateCallName(name) {
 // fn get_content_of_node(node: Node, source: &str) -> String {
 //     node.utf8_text(source.as_bytes()).unwrap().to_string()
 // }
+
