@@ -126,6 +126,7 @@ function generateCallName(name) {
     case "HardGroup":
       return "hard_group_elements";
     case "SyntaxTokenSlice":
+    case "DynamicToken":
       return "token";
     case "Group":
       return "group_elements";

@@ -1,5 +1,5 @@
 List [
-  SyntaxTokenSlice("let"),
+  DynamicToken("let"),
     Space,
     Group(
         Group(
