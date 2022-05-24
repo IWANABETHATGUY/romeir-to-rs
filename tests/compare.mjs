@@ -2,11 +2,11 @@ import { readdirSync, readFileSync, existsSync, writeFileSync } from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 
-import { generate } from "../src/index.mjs";
-
 import Parser from "web-tree-sitter";
 import { diff, diffStringsUnified } from "jest-diff";
 const { init } = Parser;
+import { execSync } from "child_process";
+import { generate } from "../src/index.mjs";
 
 const enableUpdate = !!process.env.UPDATE_RESULT;
 
@@ -42,19 +42,20 @@ fixtures.forEach(async fixtureName => {
   const irContent = readFileSync(abFixturesPath).toString();
   const tree = await parseIr(irContent);
   const rustCode = generate(tree);
+  const formattedRustCode = execSync(`echo '${rustCode}' | rustfmt`).toString();
   const expectedFilename = `${nameWithoutExtension}.rs`;
   const expectedFilePath = path.resolve(expectedDirPath, expectedFilename);
   if (!existsSync(expectedFilePath)) {
     console.error("expected file not found");
-    writeFileSync(expectedFilePath, rustCode);
+    writeFileSync(expectedFilePath, formattedRustCode);
   } else {
     if (enableUpdate) {
-      writeFileSync(expectedFilePath, rustCode);
+      writeFileSync(expectedFilePath, formattedRustCode);
       return;
     }
     const expectedRustCode = readFileSync(expectedFilePath).toString();
-    if (expectedRustCode !== rustCode) {
-      const result = diffStringsUnified(expectedRustCode, rustCode);
+    if (expectedRustCode !== formattedRustCode) {
+      const result = diffStringsUnified(expectedRustCode, formattedRustCode);
       console.log(result);
     }
   }
