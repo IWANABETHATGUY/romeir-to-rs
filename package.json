@@ -5,8 +5,9 @@
   "main": "src/index.mjs",
   "scripts": {
     "dev": "cp src/index.mjs ./playground/index.js && live-server ./playground",
-    "build": "cp src/index.mjs ./playground/index.js "
-
+    "build": "cp src/index.mjs ./playground/index.js ",
+    "test": "node tests/compare.mjs",
+    "test:update": "UPDATE_RESULT=1 && pnpm run test"
   },
   "dependencies": {
     "web-tree-sitter": "^0.20.5"
@@ -15,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^28.1.0"
+    "jest": "^28.1.0",
+    "jest-diff": "^28.1.0"
   },
   "alias": {
     "process": false

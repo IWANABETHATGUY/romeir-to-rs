@@ -1,0 +1,17 @@
+List [
+  SyntaxTokenSlice("let"),
+    Space,
+    Group(
+        Group(
+            List [
+                SyntaxTokenSlice("a"),
+                Space,
+                SyntaxTokenSlice("="),
+                Space,
+                SyntaxTokenSlice("3"),
+            ],
+        ),
+    ),
+    SyntaxTokenSlice(";"),
+    Line(Hard),
+]

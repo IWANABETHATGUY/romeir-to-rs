@@ -1,0 +1,30 @@
+List [
+    SyntaxTokenSlice("import"),
+    Space,
+    Group(
+        List [
+            SyntaxTokenSlice("{"),
+            Indent(
+                List [
+                    Line(SoftOrSpace),
+                    Group(
+                        SyntaxTokenSlice("somethingSuperLongsomethingSuperLong1"),
+                    ),
+                    ConditionalGroupContent {
+                        content: StaticToken(","),
+                        mode: Expanded,
+                        group_id: None,
+                    },
+                ],
+            ),
+            Line(SoftOrSpace),
+            SyntaxTokenSlice("}"),
+        ],
+    ),
+    Space,
+    SyntaxTokenSlice("from"),
+    Space,
+    DynamicToken("\"somethingSuperLongsomethingSuperLongsomethingSuperLong\""),
+    StaticToken(";"),
+    Line(Hard),
+]
